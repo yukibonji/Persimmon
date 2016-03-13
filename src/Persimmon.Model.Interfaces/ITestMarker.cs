@@ -4,7 +4,10 @@ using System.Text;
 
 namespace Persimmon.Model.Interfaces
 {
-    public class Class1
+    /// <summary>
+    /// The marker interface to find tests of Persimmon.
+    /// </summary>
+    public interface ITestMarker
     {
     }
 }
