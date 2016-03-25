@@ -1,3 +1,6 @@
+### 2.0.0 - unreleased
+* new model
+
 ### 1.0.2 - February 7 2016
 * show top level type name [#98](https://github.com/persimmon-projects/Persimmon/pull/98)
 * output summary with multiple output forms [#99](https://github.com/persimmon-projects/Persimmon/pull/99)

@@ -15,7 +15,7 @@ open SourceLink
 let project = "Persimmon"
 
 // List of author names (for NuGet package)
-let authors = [ "bleis-tift"; "Gab-km"; "pocketberserker" ]
+let authors = [ "bleis-tift"; "Gab-km"; "kekyo"; "pocketberserker"; "yukitos" ]
 
 // Tags for your project (for NuGet package)
 let tags = "fsharp F# testing"
@@ -62,26 +62,24 @@ Target "AssemblyInfo" (fun _ ->
     ]
 
     [
-        Attribute.Title "Persimmon"
+        Attribute.Title "Persimmon.Core"
         Attribute.Description ""
-        Attribute.InternalsVisibleTo "Persimmon.Tests"
+        Attribute.InternalsVisibleTo "Persimmon.Core.Tests"
         Attribute.Guid "F5EB6EEA-FA93-4F0D-9C23-60A91DB012DB"
     ] @ common
-    |> CreateFSharpAssemblyInfo "./src/Persimmon/AssemblyInfo.fs"
+    |> CreateFSharpAssemblyInfo "./src/Persimmon.Core/AssemblyInfo.fs"
 
     [
-        Attribute.Title "Persimmon.Runner"
+        Attribute.Title "Persimmon.Model.Interfaces"
         Attribute.Description ""
-        Attribute.Guid "EB676E7D-9D9D-47C2-A6DC-173B536641B1"
-    ] @ common
-    |> CreateFSharpAssemblyInfo "./src/Persimmon.Runner/AssemblyInfo.fs"
+        Attribute.Guid "4f501257-f3ad-4bfc-b8f0-1d50330a554d"
+        Attribute.Product "Persimmon.Model.Interfaces"
 
-    [
-        Attribute.Title "Persimmon.Script"
-        Attribute.Description ""
-        Attribute.Guid "8B733755-9708-4F9C-A356-AE0C2EF1680D"
-    ] @ common
-    |> CreateFSharpAssemblyInfo "./src/Persimmon.Script/AssemblyInfo.fs"
+        Attribute.Version "0.1.0.0"
+        Attribute.FileVersion "0.1.0.0"
+        Attribute.InformationalVersion "0.1.0.0"
+    ]
+    |> CreateCSharpAssemblyInfo "./src/Persimmon.Model.Interfaces/Properties/AssemblyInfo.cs"
 )
 
 // Copies binaries from default VS location to exepcted bin folder
